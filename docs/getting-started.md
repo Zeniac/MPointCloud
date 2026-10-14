@@ -7,7 +7,7 @@ It can be used independently or as the preferred point-cloud data provider for M
 ## Install
 
 ```bash
-dotnet add package MPointCloud
+dotnet add package MPointCloud --version 0.9.0-preview.1
 ```
 
 Then import the format namespace you need.
@@ -69,7 +69,7 @@ var data = PtsReader.Read(
 
 ## Ordered parallel text reading
 
-For supported text formats:
+For PCD ASCII, XYZ-family, and PTS readers (PLY reading is sequential):
 
 ```csharp
 using MPointCloud.IO;
@@ -85,7 +85,7 @@ var data = XyzReader.Read(
     options);
 ```
 
-Ordered parallel parsing preserves source point order while allowing parsing work to execute concurrently.
+Ordered parallel parsing preserves source point order while allowing parsing work to execute concurrently. PTS uses the same options through `PtsReader.Read(path, variant, options)`.
 
 ## Streaming large point clouds
 

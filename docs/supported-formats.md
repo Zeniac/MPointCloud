@@ -46,6 +46,10 @@ These text parallel-read modes currently apply to:
 - XYZI
 - XYZRGB
 - XYZRGBA
+- PTS XYZI
+- PTS XYZI + RGB
+
+PLY ASCII is sequential; it does not expose these parallel read options.
 
 PCD binary supports bounded synchronous and asynchronous chunk streaming, but it does not currently use the text-oriented ordered/unordered parallel parsing modes.
 
@@ -64,7 +68,7 @@ The full source cloud does not need to be materialized as one `PointCloudData` i
 
 For PCD, the original full-cloud metadata and dimensions remain available from the `PcdHeader` returned by `PcdAsciiReader.ReadChunks`.
 
-Streaming callbacks support the same sequential, ordered-parallel, and unordered parsing modes as normal text reads.
+PCD ASCII and XYZ-family streaming callbacks support the same sequential, ordered-parallel, and unordered parsing modes as their normal text reads. PCD binary streaming is sequential.
 
 ### Async streaming APIs
 
@@ -104,6 +108,10 @@ Ordered parallel writing currently applies to:
 - XYZI
 - XYZRGB
 - XYZRGBA
+- PTS XYZI
+- PTS XYZI + RGB
+
+PLY ASCII is sequential; it does not expose these parallel write options.
 
 Parallel writer output is required to match sequential writer output for the same input.
 
@@ -187,7 +195,7 @@ MPointCloud currently supports conversion among:
 - Binary compressed -> ASCII
 - Binary compressed -> Binary
 
-Conversion preserves the logical point data, schema, dimensions, viewpoint, and comments where the destination encoding can represent them.
+Conversion preserves the logical point data, schema, dimensions, viewpoint, and comments where the destination encoding can represent them. Binary encodings preserve floating-point bits; conversion through ASCII does not preserve NaN payload bits. Writing binary_compressed also removes padding fields named `_`, as described above.
 
 ## PTS
 
@@ -202,7 +210,7 @@ The first non-empty line must contain the declared point count.
 
 Coordinates are read as Float64. Intensity is read as Float64 because exporter conventions vary; writers accept signed integer, unsigned integer, or floating-point intensity fields. RGB channels are UInt8.
 
-PTS supports sequential, ordered-parallel, and unordered-parallel reads, plus sequential and ordered-parallel writes. Streaming APIs are not currently exposed because the required count header must be known before output begins.
+PTS supports sequential, ordered-parallel, and unordered-parallel reads, plus sequential and ordered-parallel writes. PTS chunk-streaming APIs are not currently implemented. The count header would require a future streaming writer to know the output count in advance; it does not prevent streaming reads.
 
 See [PTS Support](pts.md) for the exact dialect and examples.
 
@@ -276,7 +284,7 @@ MPointCloud supports explicit variants selected by the caller:
 - `XyzVariant.XyzRgb` -> x y z r g b
 - `XyzVariant.XyzRgba` -> x y z r g b a
 
-Coordinates and intensity are stored as Float64. Color channels are UInt8 and must be in the range 0-255.
+On read, coordinates and intensity are stored as Float64. Writers require floating-point coordinate and intensity fields, with COUNT 1. Color fields must be UInt8 with COUNT 1, and values must be in the range 0-255.
 
 The reader does not infer a variant from column count; callers select the expected layout explicitly.
 
@@ -290,7 +298,7 @@ MPointCloud does not currently guess or support variants such as:
 
 These may be added later as explicit variants/options rather than inferred heuristically.
 
-## Planned formats
+## Format roadmap
 
 The architecture is intended to support additional point-cloud formats without coupling the core model to PCD.
 
@@ -303,6 +311,8 @@ The architecture is intended to support additional point-cloud formats without c
 
 - **LAS** — deferred because of its larger specification and geospatial metadata surface.
 - **LAZ** — deferred with LAS because compressed LAS adds additional implementation and interoperability complexity.
+- **PTX** — deferred scanner interchange format.
+- **E57** — deferred because of its more complex container and metadata requirements.
 - additional explicit XYZ-family variants may be added when there is a concrete interoperability need.
 
 LAS/LAZ are not release blockers for the first public version. Their implementation should be driven by adoption, user demand, and the value they add relative to development cost.
@@ -311,7 +321,7 @@ LAS/LAZ are not release blockers for the first public version. Their implementat
 
 Parallel point parsing/writing is an MPointCloud capability rather than a file-format variant.
 
-Planned/ongoing work includes:
+Implemented capabilities include:
 
 - ordered parallel ASCII PCD reads — implemented
 - unordered parallel ASCII PCD reads — implemented; organized clouds require explicit opt-in and are returned unorganized
@@ -324,7 +334,6 @@ Planned/ongoing work includes:
 - async `IAsyncEnumerable` chunk streaming reads — implemented
 - synchronous chunk streaming writes — implemented
 - async `IAsyncEnumerable` chunk streaming writes — implemented
-- additional allocation and buffer optimizations
 
 These performance modes must not silently change file-format semantics.
 
@@ -336,7 +345,4 @@ MPointCloud uses:
 - official PCL reference PCD fixtures
 - user-provided regression fixtures where redistribution is safe
 
-See also:
-
-- `pcd-format-coverage.md` for detailed PCD implementation tracking
-- `legacy-reference-retirement.md` for the old-reference retirement checklist
+The fixtures and internal implementation-tracking documents are maintained in the private development repository and are not included in the public distribution.

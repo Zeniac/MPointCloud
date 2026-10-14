@@ -13,7 +13,7 @@ MPointCloud is a standalone Mekneo library and the preferred point-cloud I/O pro
 Install from NuGet:
 
 ```bash
-dotnet add package MPointCloud
+dotnet add package MPointCloud --version 0.9.0-preview.1
 ```
 
 Documentation:
@@ -50,13 +50,13 @@ MPointCloud is designed to make common point-cloud formats easy to consume from 
 
 ### Reader modes
 
-Text-format readers use bounded row chunks for parallel parsing instead of loading the entire text body into memory first. The chunk size is configurable through `PointCloudReadOptions.TextChunkSize` and defaults to 4,096 rows.
+PCD ASCII, XYZ-family, and PTS parallel readers use bounded row chunks for parallel parsing instead of loading the entire text body into memory first. The chunk size is configurable through `PointCloudReadOptions.TextChunkSize` and defaults to 4,096 rows.
 
-Text-format readers expose explicit execution modes through the shared `PointCloudReadOptions` API:
+PCD ASCII, XYZ-family, and PTS readers expose explicit execution modes through the shared `PointCloudReadOptions` API. PLY readers are sequential and do not accept these options:
 
 - **Sequential** — default, deterministic parsing.
 - **Ordered parallel** — parses points concurrently while preserving source point order.
-- **Unordered parallel** — higher-throughput mode when source order is not required.
+- **Unordered parallel** — permits reordering when source order is not required; throughput depends on the workload.
 - **Organized PCD safety** — unordered reads are blocked for organized clouds unless explicitly allowed; when allowed, the returned cloud is marked unorganized because grid topology is no longer valid.
 
 Example:
@@ -119,7 +119,7 @@ PcdHeader header = PcdAsciiReader.ReadChunks(
     });
 ```
 
-This allows applications to process, convert, upload, index, or render batches while keeping point-data working memory bounded to the current chunk instead of constructing one complete in-memory cloud.
+This allows applications to process, convert, upload, index, or render batches while keeping point-data working memory bounded by chunk size, provided consumers do not retain every chunk instead of constructing one complete in-memory cloud.
 
 ### Async streaming
 
@@ -185,7 +185,7 @@ PCD streaming writers validate declared point count, schema compatibility, chunk
 
 ### Writer modes
 
-Text-format writers expose explicit execution modes through the shared `PointCloudWriteOptions` API:
+PCD ASCII, XYZ-family, and PTS writers expose explicit execution modes through the shared `PointCloudWriteOptions` API. PLY writers are sequential and do not accept these options:
 
 - **Sequential** — default deterministic formatting and writing.
 - **Ordered parallel** — formats point rows concurrently and emits them in original point order.
@@ -217,7 +217,7 @@ PcdAsciiWriter.Write(
     });
 ```
 
-This gives MPointCloud a single .NET-oriented I/O model across PCD and the XYZ family instead of exposing unrelated APIs for each format.
+PCD ASCII, the XYZ family, and PTS share text execution options. Chunk streaming is available for PCD ASCII, PCD binary, and the XYZ family; PLY and PTS currently use complete-cloud I/O.
 
 See [Supported Formats and Variants](docs/supported-formats.md) for the detailed compatibility matrix and format-specific rules.
 
@@ -229,7 +229,7 @@ The library currently supports PCD 0.7, the XYZ family, PLY 1.0, and PTS. PCD re
 
 For the authoritative list of supported formats, variants, limitations, and conversion paths, see [Supported Formats and Variants](docs/supported-formats.md).
 
-Planned format expansion is intentionally staged: **PLY and PTS are now implemented for the first public release**, while **LAS/LAZ** are deferred to a later release and will be prioritized only if adoption and user demand justify their additional complexity.
+**PLY and PTS are implemented for the first public release. LAS, LAZ, PTX, and E57 are deferred** and will be prioritized only if adoption and user demand justify their additional complexity.
 
 ## PCD Compatibility
 
@@ -262,7 +262,7 @@ Depending on the operation and data representation, the library may use techniqu
 
 The objective is to provide both the convenience expected from a managed .NET library and performance suitable for large engineering and visualization datasets.
 
-Performance can be measured with the repository's benchmark harness at [benchmarks/MPointCloud.Benchmarks](benchmarks/MPointCloud.Benchmarks). It compares sequential, ordered-parallel, unordered-parallel, binary, binary-compressed, write modes, and chunk-size choices across multiple point counts.
+Published comparisons and measurement conditions are documented in [Performance](docs/performance.md). The internal benchmark harness is not included in the public binary distribution. Measure the public APIs with representative files and hardware when evaluating your own workload.
 
 ## Performance at a Glance
 
@@ -291,7 +291,7 @@ MPointCloud currently reads and writes:
 
 PCD support is schema-driven and includes arbitrary field names, supported PCD scalar types, `COUNT > 1`, organized/unorganized clouds, comments, `VIEWPOINT`, and conversion among ASCII, binary, and binary-compressed encodings.
 
-XYZ-family support includes XYZ, XYZI, XYZRGB, and XYZRGBA. File-based text readers support ordered and unordered parallel parsing through the shared read-options API, and text writers support ordered parallel formatting.
+XYZ-family support includes XYZ, XYZI, XYZRGB, and XYZRGBA. PCD ASCII, XYZ-family, and PTS readers support ordered and unordered parallel parsing through the shared read-options API; their writers support ordered parallel formatting. PLY I/O is sequential.
 
 See [Supported Formats and Variants](docs/supported-formats.md) for the detailed compatibility matrix, supported variants, limitations, and planned additions. PLY-specific behavior is documented in [PLY Support](docs/ply.md), and the explicit scanner-text dialect is documented in [PTS Support](docs/pts.md).
 
@@ -380,7 +380,7 @@ MPointCloud is currently under active development.
 
 The current implementation includes PCD 0.7 ASCII, binary, and binary-compressed read/write; PCD encoding conversion and official PCL interoperability fixtures; XYZ/XYZI/XYZRGB/XYZRGBA; PLY 1.0 ASCII and binary little/big-endian vertex I/O; PTS XYZI and XYZI+RGB; ordered and unordered parallel text readers where supported; ordered parallel text writers; bounded chunked I/O; synchronous streaming; and async `IAsyncEnumerable` streaming where supported.
 
-The pre-0.1 hardening gate is complete. Core correctness hardening, legacy-reference retirement, persisted official-PCL ASCII/binary/binary_compressed interoperability coverage, and representative Release-mode benchmark tuning are complete. Tuned defaults are 4,096 rows for text chunking and 16,384 points for binary streaming.
+Correctness hardening for the current `0.9.0-preview.1` release candidate is complete. Core correctness hardening, legacy-reference retirement, persisted official-PCL ASCII/binary/binary_compressed interoperability coverage, and representative Release-mode benchmark tuning are complete. Tuned defaults are 4,096 rows for text chunking and 16,384 points for binary streaming.
 
 For current format status, see [Supported Formats and Variants](docs/supported-formats.md). For installation, examples, and performance guidance, see the [Documentation Index](docs/README.md) and [Samples](samples/README.md).
 

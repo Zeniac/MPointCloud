@@ -5,16 +5,21 @@
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <MPointCloudVersion Condition="'$(MPointCloudVersion)' == ''">0.9.0-preview.1</MPointCloudVersion>
   </PropertyGroup>
 
   <ItemGroup Condition="Exists('..\..\src\MPointCloud\MPointCloud.csproj')">
     <ProjectReference Include="..\..\src\MPointCloud\MPointCloud.csproj" />
   </ItemGroup>
 
-  <ItemGroup Condition="!Exists('..\..\src\MPointCloud\MPointCloud.csproj')">
+  <ItemGroup Condition="!Exists('..\..\src\MPointCloud\MPointCloud.csproj') And Exists('..\..\lib\net10.0\MPointCloud.dll')">
     <Reference Include="MPointCloud">
       <HintPath>..\..\lib\net10.0\MPointCloud.dll</HintPath>
     </Reference>
+  </ItemGroup>
+
+  <ItemGroup Condition="!Exists('..\..\src\MPointCloud\MPointCloud.csproj') And !Exists('..\..\lib\net10.0\MPointCloud.dll')">
+    <PackageReference Include="MPointCloud" Version="$(MPointCloudVersion)" />
   </ItemGroup>
 
 </Project>

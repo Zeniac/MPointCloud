@@ -71,8 +71,14 @@ Before the first public release, the remaining focused sample is:
 Public release samples should consume the NuGet/binary distribution rather than depend on proprietary implementation source.
 
 
-## Development vs standalone use
+## Dependency selection
 
-Inside the private development repository, sample projects reference the MPointCloud project directly.
+The same sample projects select their dependency automatically:
 
-Inside the standalone binary release, the same sample projects automatically reference `lib/net10.0/MPointCloud.dll` instead. This keeps one sample source tree valid for both development CI and public binary distribution.
+- Private development checkout: reference the MPointCloud project.
+- Standalone release ZIP: reference the included `lib/net10.0/MPointCloud.dll`.
+- Public repository checkout: restore `MPointCloud` version `0.9.0-preview.1` from NuGet after that version is published.
+
+The commands above require the .NET 10 SDK. Run them from the repository or extracted release root. A public checkout cannot restore the preview before publication; the standalone ZIP can be used without waiting for NuGet publication.
+
+To test another published package version, pass `-p:MPointCloudVersion=<version>` to `dotnet run`. This override applies only when the sample selects NuGet.

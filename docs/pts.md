@@ -6,7 +6,7 @@ PTS is widely used but not governed by one universally enforced formal specifica
 
 ## File structure
 
-A supported PTS file begins with a single non-negative integer point count.
+The first non-empty line of a supported PTS file contains a single non-negative integer point count. Blank lines are ignored; comment lines and comma-separated columns are not supported. Numeric parsing and formatting use invariant culture.
 
 Each following non-empty row contains exactly one point.
 
@@ -45,6 +45,8 @@ When writing:
 - x, y, z must be floating-point fields;
 - intensity may be signed integer, unsigned integer, or floating-point;
 - r, g, b must be UInt8 fields in the range 0..255.
+
+Required fields have COUNT 1 and are located by name case-insensitively. Extra input fields are not written. PTS reads return an unorganized cloud; PTS output does not preserve organized dimensions or PCD viewpoint metadata.
 
 ## Count validation
 
@@ -110,7 +112,7 @@ PtsWriter.Write(
 
 ## Scope
 
-MPointCloud does not currently infer arbitrary PTS column layouts.
+The default variant is `PtsVariant.Xyzi`. MPointCloud does not currently infer arbitrary PTS column layouts. Chunk streaming and async APIs are not currently implemented.
 
 The explicit supported layouts are:
 

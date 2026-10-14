@@ -83,6 +83,10 @@ PlyWriter.Write(
     PlyDataEncoding.BinaryBigEndian);
 ```
 
+## Execution modes
+
+All three PLY encodings currently use sequential complete-cloud readers and writers. PLY does not expose parallel options or chunk-streaming/async APIs. Reading from a `Stream` is supported, but returns the complete vertex cloud.
+
 ## Notes
 
 PLY does not encode explicit byte offsets between scalar properties. MPointCloud therefore requires a tightly packed schema when writing PLY.

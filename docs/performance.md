@@ -10,11 +10,7 @@ The results below come from a representative local run using:
 - runtime-default worker count
 - 1,000,000-point dataset for the headline comparison
 
-Run the same benchmark locally with:
-
-```bash
-dotnet run --project benchmarks/MPointCloud.Benchmarks/MPointCloud.Benchmarks.csproj -c Release -- --iterations 7
-```
+The benchmark harness is maintained in the private development repository and is not included in the public distribution. These results cover XYZ and PCD; they are not PLY or PTS throughput measurements.
 
 Absolute throughput varies by hardware, runtime, dataset, and application environment. The numbers are most useful as comparative evidence between MPointCloud execution modes, not as universal performance guarantees.
 
@@ -29,7 +25,7 @@ Performance can be materially affected by:
 - **worker configuration and system load** — parallel performance depends on available CPU time and scheduler contention;
 - **thermal and power limits** — sustained workloads can behave differently on laptops, desktops, workstations, and servers.
 
-For this reason, users evaluating MPointCloud for a performance-sensitive workload should run the benchmark harness on hardware representative of their deployment environment.
+For this reason, evaluate the public reader and writer APIs on hardware and datasets representative of your deployment. Keep encoding, schema, point count, worker settings, and warm-up conditions consistent when comparing modes.
 
 ## 1,000,000-point read comparison
 
@@ -104,4 +100,4 @@ The benchmark supports several practical conclusions:
 - PCD binary_compressed can read very quickly while reducing stored payload size, although compression makes writes more expensive;
 - chunk defaults are benchmark-backed rather than arbitrary.
 
-The complete recorded run, including 10,000-, 100,000-, and 1,000,000-point results, is maintained in `benchmarks/MPointCloud.Benchmarks/RESULTS.md`.
+The complete recorded run, including 10,000-, 100,000-, and 1,000,000-point results, is retained internally. The public tables above summarize the representative 1,000,000-point comparisons and chunk-size sweep.

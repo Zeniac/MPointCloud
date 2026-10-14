@@ -6,13 +6,7 @@ The first public release is intended to be available through both NuGet and a st
 
 ## NuGet
 
-Preferred installation for .NET applications:
-
-```bash
-dotnet add package MPointCloud
-```
-
-For preview packages, specify the preview version explicitly when required:
+For the current preview, specify the version explicitly:
 
 ```bash
 dotnet add package MPointCloud --version 0.9.0-preview.1
@@ -26,11 +20,13 @@ Current sample projects cover:
 
 - PCD read/write and encoding conversion
 - bounded PCD streaming
+- async PCD streaming
+- arbitrary-schema PCD data
 - XYZRGB ordered-parallel I/O
 - PLY read/write
 - PTS read/write
 
-NuGet users can clone or browse the public repository and run the samples directly. The standalone binary release also includes the same sample source, configured to reference the packaged `MPointCloud.dll`.
+After the preview package is published, users can clone the public repository and run the samples; the projects restore the pinned preview version from NuGet when the standalone DLL is absent. The standalone binary release also includes the same sample source, configured to reference the packaged `MPointCloud.dll`.
 
 See [Samples](../samples/README.md) for the current list and commands.
 
