@@ -1,0 +1,358 @@
+# MPointCloud Free Binary License 1.0
+
+Copyright © 2026 Mekneo. All rights reserved.
+
+This license governs use of the MPointCloud software library, including compiled binaries, documentation, interfaces, APIs, test assets, supporting materials, packages, and related distribution files collectively referred to as the "Software." Public sample source code distributed specifically for demonstrating the MPointCloud API is governed by the separate permission in Section 8A.
+
+MPointCloud is proprietary, closed-source software.
+
+The Software is provided free of charge for permitted personal, academic, research, and commercial use subject to the terms of this License.
+
+## 1. Grant of License
+
+Subject to compliance with this License, the copyright holder grants you a non-exclusive, worldwide, royalty-free, non-transferable license to:
+
+- use the compiled Software for personal purposes;
+- use the compiled Software for academic, educational, and research purposes;
+- use the compiled Software internally within a commercial organization;
+- integrate the compiled Software into commercial or non-commercial applications;
+- distribute the compiled Software as a dependency or component of an application that you develop or distribute;
+- obtain and consume MPointCloud through authorized package managers and dependency-management systems;
+- include MPointCloud as a direct or transitive dependency of another software package;
+- use the Software together with MEngine or independently of MEngine;
+- create software that consumes the public APIs exposed by MPointCloud.
+
+No source-code rights are granted unless separately authorized in writing by the copyright holder.
+
+## 2. Closed-Source Software
+
+MPointCloud is proprietary closed-source software.
+
+This License does not grant permission to:
+
+- distribute MPointCloud source code;
+- publish MPointCloud source code;
+- sublicense MPointCloud source code;
+- incorporate MPointCloud source code into another software project;
+- represent MPointCloud source code as your own work;
+- remove or alter copyright, authorship, attribution, or license notices;
+- claim ownership of MPointCloud or any substantial portion of its implementation.
+
+Possession of source code, whether through authorized access, accidental disclosure, reverse engineering, decompilation, or any other means, does not transfer ownership or intellectual-property rights.
+
+## 3. Commercial Use
+
+The compiled Software may be used free of charge in commercial products.
+
+You may distribute MPointCloud binaries as part of a larger commercial application, provided that:
+
+1. MPointCloud is not sold or licensed as a standalone competing library;
+2. MPointCloud remains identifiable as a third-party dependency or component;
+3. the attribution requirements in this License are satisfied;
+4. the distributed application does not claim authorship or ownership of MPointCloud;
+5. copyright and license notices are preserved.
+
+You may charge for your own application, service, product, platform, or solution that uses MPointCloud.
+
+The fact that MPointCloud is included in a paid product does not transfer any ownership rights in MPointCloud to the distributor or end user.
+
+## 4. Mandatory Attribution
+
+Any product, application, service, package, or distribution that includes or depends upon MPointCloud must provide reasonable attribution to MPointCloud and its copyright holder.
+
+Attribution must appear in at least one reasonably discoverable location accessible to the end user, customer, developer, or recipient, as appropriate to the type of product being distributed.
+
+Acceptable locations include, but are not limited to:
+
+- an About dialog or About page;
+- a Help or Credits section;
+- a Third-Party Software or Dependencies page;
+- product documentation;
+- dependency documentation;
+- a NOTICE file;
+- an acknowledgements file;
+- a legal notices page;
+- application package metadata;
+- NuGet package metadata;
+- software-bill-of-materials documentation;
+- other locations where third-party dependency notices are normally presented.
+
+The attribution should substantially identify:
+
+**MPointCloud — high-performance .NET point-cloud data I/O library**  
+**Copyright © 2026 Mekneo**
+
+and should indicate that MPointCloud is used under the MPointCloud Free Binary License.
+
+A hyperlink to the official MPointCloud repository, package, website, or project page may also be included where appropriate.
+
+The attribution requirement does not require prominent advertising, splash-screen branding, or marketing placement.
+
+The purpose of the attribution requirement is to preserve recognition of authorship and ownership and prevent MPointCloud from being represented as the original work or property of another person or organization.
+
+## 5. No False Claim of Authorship or Ownership
+
+You may not state, imply, advertise, document, or represent that you or your organization created, authored, invented, or own MPointCloud.
+
+You may describe software you created that integrates with or uses MPointCloud, but you must distinguish your work from MPointCloud itself.
+
+You may not:
+
+- remove references identifying MPointCloud as a third-party component;
+- replace MPointCloud authorship or ownership notices with your own;
+- claim copyright over MPointCloud;
+- claim ownership of MPointCloud;
+- present MPointCloud as an internally developed library when it was obtained under this License;
+- register or assert intellectual-property rights over MPointCloud or substantially identical implementations derived from it.
+
+Integration of MPointCloud into another product does not create joint ownership or derivative ownership of MPointCloud.
+
+## 6. Redistribution
+
+You may redistribute unmodified compiled MPointCloud binaries when they are reasonably necessary for operation of a product, library, service, package, or application that uses MPointCloud.
+
+Redistribution must preserve this License or provide a clear reference to where this License can be obtained.
+
+You may not redistribute MPointCloud as:
+
+- a standalone commercial library;
+- a rebranded library;
+- a competing PCD library presented as your own product;
+- a modified binary that falsely retains the MPointCloud name;
+- part of a software-development kit whose primary purpose is to resell or repackage MPointCloud itself without written permission.
+
+Bundling MPointCloud with a broader application, engineering tool, visualization system, plugin, game, service, package, or other substantial software product is permitted.
+
+## 7. NuGet and Package-Manager Distribution
+
+MPointCloud may be distributed through NuGet and other software package-management or dependency-management systems authorized by Mekneo.
+
+Users may:
+
+- install MPointCloud from an authorized package source;
+- reference MPointCloud from a .NET project;
+- declare MPointCloud as a package dependency;
+- publish their own packages that depend upon MPointCloud;
+- include MPointCloud as a transitive dependency;
+- restore MPointCloud automatically through standard package-management tooling;
+- distribute applications that include MPointCloud binaries as a result of normal build, publish, deployment, or packaging processes.
+
+A package that depends upon MPointCloud is not considered a prohibited redistribution merely because MPointCloud is restored or delivered transitively through a dependency graph.
+
+A compiled application may also contain MPointCloud through standard .NET publishing mechanisms, including deployment models that copy, bundle, package, or otherwise include dependency binaries with the application.
+
+This permission does not allow a third party to:
+
+- publish an unofficial package whose primary content is a copy of MPointCloud;
+- mirror or republish the official MPointCloud package under another package identifier without permission;
+- modify MPointCloud and distribute the modified binary as an official or compatible MPointCloud release;
+- remove Mekneo attribution or licensing information;
+- represent an unofficial package as being published, supported, or endorsed by Mekneo.
+
+Official MPointCloud package identifiers, feeds, and distribution channels may be designated by Mekneo.
+
+Where technically practical, packages that directly depend on MPointCloud should preserve package metadata identifying MPointCloud as a dependency.
+
+## 8. Reverse Engineering and Modification
+
+Except where applicable law expressly prohibits such restrictions, you may not:
+
+- reverse engineer;
+- decompile;
+- disassemble;
+- reconstruct;
+- modify;
+- translate;
+- derive source code from;
+- or create substantially similar implementations derived from the internal implementation of MPointCloud.
+
+Nothing in this section prevents interoperability work that is expressly protected or permitted by applicable law.
+
+This restriction does not prohibit users from independently implementing the publicly documented PCD file format.
+
+## 8A. Public Sample Code Permission
+
+Public sample source code distributed by Mekneo specifically to demonstrate use of the documented MPointCloud API may be copied, modified, adapted, incorporated into, and redistributed as part of applications or other software that uses MPointCloud.
+
+This sample-code permission exists so developers can use the examples as practical starting points without exposing or licensing the proprietary MPointCloud implementation source.
+
+When sample code is substantially copied into your own application, you may place the resulting application code under your own project license and are not required to preserve the MPointCloud sample file header inside adapted snippets.
+
+If an Mekneo sample is redistributed substantially unchanged as a standalone example or tutorial, its existing Mekneo attribution and this sample-code permission should be preserved.
+
+This permission applies only to source files clearly distributed as public samples. It does not apply to:
+
+- MPointCloud library implementation source;
+- internal tests;
+- benchmarks;
+- fixture generators;
+- internal tooling;
+- proprietary development utilities;
+- source code obtained through unauthorized disclosure, reverse engineering, or decompilation.
+
+The MPointCloud binary used by the sample remains governed by the other terms of this License.
+
+## 9. Interfaces and Interoperability
+
+The public API surface of MPointCloud may be used by external applications, plugins, engines, tools, converters, packages, and other software.
+
+Users may create their own software that interoperates with MPointCloud through its documented public APIs.
+
+Nothing in this License grants ownership of those APIs, their implementation, internal architecture, or documentation.
+
+## 10. PCD and Point Cloud Library Attribution
+
+MPointCloud is an independent .NET implementation of the publicly documented PCD (Point Cloud Data) file format.
+
+The PCD format and the Point Cloud Library (PCL) project are not owned by MPointCloud or Mekneo.
+
+MPointCloud does not claim ownership of:
+
+- the PCD file-format specification;
+- the Point Cloud Library project;
+- PCL source code;
+- PCL documentation;
+- third-party standards or specifications used for interoperability.
+
+MPointCloud is not an official component of PCL and is not affiliated with, sponsored by, or endorsed by the Point Cloud Library project unless expressly stated otherwise.
+
+The MPointCloud implementation, including its .NET code, architecture, performance optimizations, APIs, tests, tooling, integration layers, documentation, packaging, and other original material, remains the intellectual property of Mekneo.
+
+## 11. Independent Implementations
+
+Nothing in this License prevents another party from independently creating its own implementation of the PCD file format based solely on publicly available specifications and documentation.
+
+However, this License does not permit copying, reproducing, adapting, translating, reverse engineering, or deriving such an implementation from MPointCloud source code or proprietary internal implementation details.
+
+## 12. Trademarks and Project Name
+
+The names "MPointCloud", "MEngine", and "Mekneo", together with associated logos, package identifiers, or project identifiers, may not be used in a manner that implies ownership, endorsement, sponsorship, or official affiliation without permission.
+
+You may truthfully state that your product:
+
+- uses MPointCloud;
+- integrates with MPointCloud;
+- is compatible with MPointCloud;
+- includes MPointCloud as a dependency;
+- uses MPointCloud as a NuGet dependency.
+
+You may not rename a modified or redistributed library as MPointCloud without authorization.
+
+## 13. Ownership
+
+All ownership rights in MPointCloud remain with Mekneo.
+
+This includes, where applicable:
+
+- source code;
+- compiled code;
+- internal algorithms;
+- architecture;
+- optimization techniques;
+- API design;
+- tests;
+- sample implementations;
+- documentation;
+- branding;
+- project structure;
+- package definitions;
+- build tooling;
+- original supporting materials.
+
+No ownership interest is transferred by this License.
+
+Use, integration, redistribution, or inclusion of MPointCloud in another product does not grant any ownership rights in MPointCloud.
+
+## 14. No Warranty
+
+THE SOFTWARE IS PROVIDED "AS IS" AND "AS AVAILABLE", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED.
+
+TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE COPYRIGHT HOLDER DISCLAIMS ALL WARRANTIES, INCLUDING BUT NOT LIMITED TO WARRANTIES OF:
+
+- MERCHANTABILITY;
+- FITNESS FOR A PARTICULAR PURPOSE;
+- NON-INFRINGEMENT;
+- ACCURACY;
+- RELIABILITY;
+- PERFORMANCE;
+- DATA INTEGRITY;
+- CONTINUOUS AVAILABILITY.
+
+You are responsible for determining whether the Software is suitable for your intended use.
+
+## 15. Limitation of Liability
+
+TO THE MAXIMUM EXTENT PERMITTED BY LAW, Mekneo SHALL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES ARISING FROM OR RELATED TO USE OF THE SOFTWARE.
+
+This includes, without limitation:
+
+- loss of data;
+- loss of profits;
+- business interruption;
+- engineering or design errors;
+- corrupted files;
+- failed conversions;
+- software failures;
+- hardware failures;
+- reliance on point-cloud data processed by the Software.
+
+Use of the Software is at your own risk.
+
+## 16. Termination
+
+Your rights under this License terminate automatically if you materially violate its terms.
+
+Upon termination, you must cease unauthorized use and distribution of MPointCloud.
+
+Termination does not affect rights or remedies that accrued before termination.
+
+Mekneo may provide an opportunity to cure a violation at its discretion.
+
+## 17. Separate Commercial Agreements
+
+Mekneo may offer separate licenses, support agreements, source-access agreements, OEM agreements, redistribution agreements, enterprise agreements, or other commercial arrangements.
+
+Such agreements may grant additional rights beyond those provided by this License.
+
+## 18. Future Versions
+
+Mekneo may publish revised versions of this License.
+
+Software released under a particular version of this License remains subject to that version unless otherwise stated.
+
+## 19. Governing Law
+
+Unless otherwise required by applicable law or agreed in writing, this License shall be governed by the laws of the Province of Ontario and the applicable federal laws of Canada.
+
+## 20. Entire Agreement
+
+This License constitutes the agreement governing use of MPointCloud unless a separate written agreement has been entered into with Mekneo.
+
+If any provision of this License is found unenforceable, the remaining provisions shall continue in effect.
+
+---
+
+## Attribution Examples
+
+A compliant application attribution may be as simple as:
+
+> This product uses MPointCloud, a high-performance .NET PCD library.  
+> Copyright © 2026 Mekneo. Used under the MPointCloud Free Binary License.
+
+For developer or dependency documentation:
+
+> Third-Party Dependency: MPointCloud  
+> High-performance .NET point-cloud data I/O library  
+> Copyright © 2026 Mekneo  
+> Used under the MPointCloud Free Binary License.
+
+For NuGet or package metadata:
+
+> MPointCloud — high-performance .NET point-cloud data I/O library  
+> Copyright © 2026 Mekneo  
+> Licensed under the MPointCloud Free Binary License.
+
+---
+
+**MPointCloud Free Binary License 1.0**  
+Copyright © 2026 Mekneo. All rights reserved.
