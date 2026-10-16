@@ -29,5 +29,5 @@ The public sample set covers:
 - PTS
 - arbitrary schema inspection
 
-MEngine integration documentation will be added after the preview package is consumed through the public package boundary.
+MEngine integration documentation will be added after the stream-based preview.2 integration is validated.
 

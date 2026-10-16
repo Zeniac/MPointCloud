@@ -72,9 +72,9 @@ dotnet run --project samples/PtsQuickStart/PtsQuickStart.csproj -c Release
 
 ## Release sample set
 
-Before the first public release, the remaining focused sample is:
+Before 1.0, the remaining focused sample is:
 
-- MEngine provider integration, after the preview NuGet package is published
+- MEngine provider integration, after the stream-based preview.2 integration is validated
 
 Public release samples should consume the NuGet/binary distribution rather than depend on proprietary implementation source.
 

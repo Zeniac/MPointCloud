@@ -8,9 +8,9 @@ It should be updated whenever format support changes.
 
 | Format | Variant / Encoding | Read | Write | Notes |
 | --- | --- | --- | --- | --- |
-| PCD 0.7 | ASCII | Yes | Yes | Arbitrary fields, COUNT > 1, organized/unorganized clouds, NaN handling. |
-| PCD 0.7 | Binary | Yes | Yes | Schema-driven binary I/O using the declared field layout. |
-| PCD 0.7 | Binary compressed | Yes | Yes | PCL-compatible field-major layout and LZF compression. |
+| PCD 0.7 | ASCII | Yes | Yes | Path and Stream input; arbitrary fields, COUNT > 1, organized/unorganized clouds, NaN handling. |
+| PCD 0.7 | Binary | Yes | Yes | Path and Stream input; schema-driven binary I/O using the declared field layout. |
+| PCD 0.7 | Binary compressed | Yes | Yes | Path and Stream input; PCL-compatible field-major layout and LZF compression. |
 | XYZ | Plain XYZ text | Yes | Yes | x y z |
 | XYZ | XYZI | Yes | Yes | x y z intensity; intensity is Float64. |
 | XYZ | XYZRGB | Yes | Yes | x y z r g b; RGB channels are UInt8 (0-255). |
@@ -56,6 +56,14 @@ PCD binary supports bounded synchronous and asynchronous chunk streaming, but it
 ### Complete-file PCD stream APIs
 
 From `0.9.0-preview.2`, `PcdAsciiReader.Read(Stream)` and `PcdAsciiReader.Read(Stream, PointCloudReadOptions)` read ASCII directly from caller-owned streams. `PcdReader.Read(Stream)` and `PcdReader.Read(Stream, PointCloudReadOptions?)` detect ASCII, binary, or binary_compressed from a single header parse.
+
+| PCD encoding | Complete-file `Read(Stream)` | Non-seekable input | Parallel parsing from `Stream` | Bounded chunk read |
+| --- | --- | --- | --- | --- |
+| ASCII | Yes | Yes | Ordered or unordered, with read options | Yes |
+| Binary | Yes | Yes | No | Yes |
+| binary_compressed | Yes | Yes | No | No |
+
+`PcdReader.Read(Stream)` selects the encoding automatically. Specialized stream readers are `PcdAsciiReader.Read`, `PcdBinaryReader.Read`, and `PcdBinaryCompressedReader.Read`.
 
 All specialized complete-file PCD readers also accept streams. They read at the current position without seeking or rewinding and leave the caller's stream open on success and failure. Seekable and non-seekable inputs are supported. Each stream must contain one complete PCD through end of stream; trailing bytes (or additional non-empty ASCII rows) are rejected. Failure may advance the stream, so its position after an exception is unspecified.
 

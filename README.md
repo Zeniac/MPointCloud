@@ -48,6 +48,8 @@ MPointCloud is designed to make common point-cloud formats easy to consume from 
 | **PTS XYZI** | Yes | Yes | Yes | No | No | Yes | Yes | No | No |
 | **PTS XYZI RGB** | Yes | Yes | Yes | No | No | Yes | Yes | No | No |
 
+The chunk columns describe incremental point processing. Complete-file .NET `Stream` input is listed separately below; a "No" for chunk reads does not mean that `Read(Stream)` is unavailable.
+
 ### Reader modes
 
 PCD ASCII, XYZ-family, and PTS parallel readers use bounded row chunks for parallel parsing instead of loading the entire text body into memory first. The chunk size is configurable through `PointCloudReadOptions.TextChunkSize` and defaults to 4,096 rows.
@@ -86,6 +88,12 @@ var (header, data) = PcdAsciiReader.Read(
 ### Complete-file PCD stream input
 
 Since `0.9.0-preview.2`, `PcdReader.Read(Stream)` detects ASCII, binary, or binary_compressed from one header parse. `PcdAsciiReader.Read(Stream)` and its read-options overload are also available.
+
+| PCD encoding | Complete-file `Read(Stream)` | Non-seekable input | Parallel parsing from `Stream` | Bounded chunk read |
+| --- | --- | --- | --- | --- |
+| ASCII | Yes | Yes | Ordered or unordered, with read options | Yes |
+| Binary | Yes | Yes | No | Yes |
+| binary_compressed | Yes | Yes | No | No |
 
 Caller streams are read from their current position and remain open on success or failure. Seekable and non-seekable inputs are supported, including ZIP-entry streams. Each input must contain one complete PCD through end of stream; these APIs materialize the complete cloud.
 
@@ -127,7 +135,7 @@ PcdHeader header = PcdAsciiReader.ReadChunks(
     });
 ```
 
-This allows applications to process, convert, upload, index, or render batches while keeping point-data working memory bounded by chunk size, provided consumers do not retain every chunk instead of constructing one complete in-memory cloud.
+This allows applications to process, convert, upload, index, or render batches without constructing one complete in-memory cloud. Point-data working memory remains bounded by chunk size provided consumers do not retain every chunk.
 
 ### Async streaming
 
