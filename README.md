@@ -13,7 +13,7 @@ MPointCloud is a standalone Mekneo library and the preferred point-cloud I/O pro
 Install from NuGet:
 
 ```bash
-dotnet add package MPointCloud --version 0.9.0-preview.2
+dotnet add package MPointCloud --version 1.0.0
 ```
 
 Documentation:
@@ -331,25 +331,17 @@ Applications can use MPointCloud simply as a PCD reader/writer without using any
 
 ## MEngine Integration
 
-MPointCloud is also designed to integrate naturally with **MEngine**.
+MEngine consumes MPointCloud through the optional `Mengine.IO.MPointCloud` adapter. It reads ASCII, binary and binary_compressed directly from streams and converts results into MEngine-owned data types.
 
-Within the MEngine ecosystem, MPointCloud is the **preferred PCD reader and writer**.
+MPointCloud remains independent of MEngine. Applications may use it alone, register the optional MEngine provider, or supply their own providers.
 
-The intended architecture remains separated:
+See [MEngine Integration](docs/mengine-integration.md) for consumer examples, prerequisites, mapping limits, and what happens when the adapter is absent. The initial integration gate passed against preview.2; MEngine should smoke-test the actual 1.0 package after publication.
 
-```text
-MPointCloud
-     ↑
-     │ consumed by
-     │
-MEngine Point Cloud integration
-```
+## Who uses MPointCloud?
 
-This keeps file-format handling independent from rendering and visualization.
+If MPointCloud is useful in your application, we would like to hear about it. Use **Contact owners** on the [NuGet package page](https://www.nuget.org/packages/MPointCloud) to share your company/product name, an optional website link, and a short description of how you use the library.
 
-MEngine may use MPointCloud to obtain PCD point data, while MPointCloud itself remains unaware of MEngine.
-
-This separation also allows MEngine users to provide their own point-cloud loaders or third-party data providers when required.
+Please state whether we may list the company/product name and link publicly. Usage reporting is voluntary and separate from required license attribution. Logos and testimonials require separate permission.
 
 ## Licensing and Source Availability
 
@@ -392,11 +384,11 @@ MPointCloud is being developed around several core principles:
 
 ## Project Status
 
-MPointCloud is currently under active development.
+MPointCloud 1.0 is the first stable release. The initial MEngine integration gate completed against preview.2; version 1.0 retains that implementation and public API.
 
 The current implementation includes PCD 0.7 ASCII, binary, and binary-compressed read/write; PCD encoding conversion and official PCL interoperability fixtures; XYZ/XYZI/XYZRGB/XYZRGBA; PLY 1.0 ASCII and binary little/big-endian vertex I/O; PTS XYZI and XYZI+RGB; ordered and unordered parallel text readers where supported; ordered parallel text writers; bounded chunked I/O; synchronous streaming; and async `IAsyncEnumerable` streaming where supported.
 
-Correctness hardening for `0.9.0-preview.2` is complete. Core correctness hardening, legacy-reference retirement, persisted official-PCL ASCII/binary/binary_compressed interoperability coverage, and representative Release-mode benchmark tuning are complete. Tuned defaults are 4,096 rows for text chunking and 16,384 points for binary streaming.
+The correctness hardening and initial integration gates for 1.0 are complete. Core correctness hardening, legacy-reference retirement, persisted official-PCL ASCII/binary/binary_compressed interoperability coverage, and representative Release-mode benchmark tuning are complete. Tuned defaults are 4,096 rows for text chunking and 16,384 points for binary streaming.
 
 For current format status, see [Supported Formats and Variants](docs/supported-formats.md). For installation, examples, and performance guidance, see the [Documentation Index](docs/README.md) and [Samples](samples/README.md).
 

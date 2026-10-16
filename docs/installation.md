@@ -2,14 +2,14 @@
 
 MPointCloud is distributed as proprietary closed-source binaries under the MPointCloud Free Binary License.
 
-Public previews are distributed through NuGet and standalone GitHub release archives.
+MPointCloud 1.0 is distributed through NuGet and standalone GitHub release archives.
 
 ## NuGet
 
-For the current preview, specify the version explicitly:
+Install the stable 1.0 package:
 
 ```bash
-dotnet add package MPointCloud --version 0.9.0-preview.2
+dotnet add package MPointCloud --version 1.0.0
 ```
 
 ## Samples
@@ -27,7 +27,7 @@ Current sample projects cover:
 - PLY read/write
 - PTS read/write
 
-Users can clone the public repository and run the samples; the projects restore the pinned preview version from NuGet when the standalone DLL is absent. The standalone binary release also includes the same sample source, configured to reference the packaged `MPointCloud.dll`.
+Users can clone the public repository and run the samples; the projects restore version 1.0.0 from NuGet when the standalone DLL is absent. The standalone binary release also includes the same sample source, configured to reference the packaged `MPointCloud.dll`.
 
 See [Samples](../samples/README.md) for the current list and commands.
 
@@ -57,7 +57,7 @@ Reference `MPointCloud.dll` from the appropriate application project when using 
 
 ## Runtime target
 
-The current development target is:
+The supported runtime target is:
 
 - .NET 10 (`net10.0`)
 

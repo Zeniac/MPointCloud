@@ -72,9 +72,7 @@ dotnet run --project samples/PtsQuickStart/PtsQuickStart.csproj -c Release
 
 ## Release sample set
 
-Before 1.0, the remaining focused sample is:
-
-- MEngine provider integration, after the stream-based preview.2 integration is validated
+The release includes eight standalone sample projects plus an [MEngine integration recipe](MEngineIntegration/README.md). The recipe requires separately available MEngine assemblies; the eight runnable library projects do not.
 
 Public release samples should consume the NuGet/binary distribution rather than depend on proprietary implementation source.
 
@@ -85,9 +83,9 @@ The same sample projects select their dependency automatically:
 
 - Private development checkout: reference the MPointCloud project.
 - Standalone release ZIP: reference the included `lib/net10.0/MPointCloud.dll`.
-- Public repository checkout: restore the published `MPointCloud` version `0.9.0-preview.2` from NuGet.
+- Public repository checkout: restore `MPointCloud` version `1.0.0` from NuGet once the stable package is published.
 
-The commands above require the .NET 10 SDK. Run them from the repository or extracted release root. Public checkout samples restore preview.2 from NuGet; standalone ZIP samples use the included DLL.
+The commands above require the .NET 10 SDK. Run them from the repository or extracted release root. Public checkout samples restore version 1.0.0 from NuGet; standalone ZIP samples use the included DLL. Newly prepared package versions must be published before a public-feed restore can succeed.
 
 To test another published package version, pass `-p:MPointCloudVersion=<version>` to `dotnet run`. This override applies only when the sample selects NuGet.
 

@@ -9,7 +9,7 @@ MPointCloud is a standalone Mekneo library and the preferred point-cloud I/O pro
 ## Install
 
 ```bash
-dotnet add package MPointCloud --version 0.9.0-preview.2
+dotnet add package MPointCloud --version 1.0.0
 ```
 
 ## Supported formats
@@ -70,6 +70,12 @@ https://github.com/Zeniac/MPointCloud/tree/master/samples
 
 The standalone GitHub release ZIP also includes the same sample source configured to reference the packaged MPointCloud DLL.
 
+## MEngine integration
+
+The initial integration gate passed using the optional MEngine adapter and the published preview.2 package. MPointCloud 1.0 retains that library implementation and public API. MEngine assemblies are acquired separately.
+
+Provider usage and mapping limits: https://github.com/Zeniac/MPointCloud/blob/master/docs/mengine-integration.md
+
 ## Documentation
 
 - Getting started: https://github.com/Zeniac/MPointCloud/blob/master/docs/getting-started.md
@@ -88,6 +94,12 @@ Performance depends on CPU core count, single-core speed, memory bandwidth, stor
 See:
 
 https://github.com/Zeniac/MPointCloud/blob/master/docs/performance.md
+
+## Who uses MPointCloud?
+
+If MPointCloud is useful in your application, we would like to hear about it. Use **Contact owners** on the [NuGet package page](https://www.nuget.org/packages/MPointCloud) to share your company/product name, an optional website link, and a short description of how you use the library.
+
+Please state whether we may list the company/product name and link publicly. Usage reporting is voluntary and separate from required license attribution. Logos and testimonials require separate permission.
 
 ## License
 

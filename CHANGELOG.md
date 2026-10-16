@@ -6,11 +6,19 @@ MPointCloud follows semantic versioning for public releases.
 
 ## [Unreleased]
 
-### Before 1.0
+No unreleased changes are recorded.
 
-- final MEngine integration validation against preview.2
-- public MEngine provider integration sample and documentation
-- fixes for concrete preview issues
+## [1.0.0]
+
+First stable release, retaining the implementation and public APIs validated in preview.2.
+
+- PCD 0.7 ASCII, binary and binary_compressed; XYZ/XYZI/XYZRGB/XYZRGBA; PLY 1.0 ASCII and both binary endiannesses; documented PTS XYZI/XYZI+RGB dialect.
+- Complete-file PCD Stream input for all three encodings, with current-position reads and caller-owned seekable/non-seekable streams.
+- Sequential, ordered/unordered parallel and chunk/async I/O where documented for each format.
+- Initial MEngine integration gate completed against the published preview.2 package; the actual 1.0 package must be consumed and smoke-tested after publication.
+- Eight standalone sample projects and an MEngine provider integration guide/consumer recipe.
+- Optional adoption invitation with permission-based company/product listing.
+- Existing free binary license, attribution requirements, .NET 10 target and dependency independence retained.
 
 ## [0.9.0-preview.2]
 
@@ -22,7 +30,7 @@ MPointCloud follows semantic versioning for public releases.
 - Regression coverage for short reads, nonzero starting positions, failure ownership, malformed/truncated/trailing input, ASCII parallel options, and organized-cloud policies.
 - `PcdStreamInput` sample reading all three encodings directly from in-memory ZIP entries.
 
-Existing filename APIs, format support, license, and chunk-streaming APIs remain available. This preview addresses the API gap reported during MEngine integration; final MEngine validation against preview.2 is pending.
+Existing filename APIs, format support, license, and chunk-streaming APIs remain available. This preview addresses the API gap reported during MEngine integration; the initial MEngine integration gate subsequently completed against preview.2.
 
 ## [0.9.0-preview.1]
 

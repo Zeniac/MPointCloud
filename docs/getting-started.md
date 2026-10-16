@@ -7,7 +7,7 @@ It can be used independently or as the preferred point-cloud data provider for M
 ## Install
 
 ```bash
-dotnet add package MPointCloud --version 0.9.0-preview.2
+dotnet add package MPointCloud --version 1.0.0
 ```
 
 Then import the format namespace you need.
@@ -121,6 +121,7 @@ This avoids materializing the full point cloud as one in-memory object.
 
 ## Where to go next
 
+- [MEngine Integration](mengine-integration.md)
 - [Supported Formats](supported-formats.md)
 - [Performance](performance.md)
 - [PLY Support](ply.md)
