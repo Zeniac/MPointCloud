@@ -6,6 +6,7 @@
 - [Getting Started](getting-started.md)
 - [Supported Formats](supported-formats.md)
 - [Performance](performance.md)
+- [Support and Feedback](../SUPPORT.md)
 
 ## Format guides
 

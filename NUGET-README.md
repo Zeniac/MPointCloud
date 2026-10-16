@@ -95,6 +95,12 @@ See:
 
 https://github.com/Zeniac/MPointCloud/blob/master/docs/performance.md
 
+## Support and feedback
+
+Report bugs and request features at https://github.com/Zeniac/MPointCloud/issues. Include the package/runtime version, format/encoding, API/options, expected and actual results, and a small shareable reproducer. For private inquiries, use **Contact owners** on this NuGet page.
+
+Support guidance: https://github.com/Zeniac/MPointCloud/blob/master/SUPPORT.md
+
 ## Who uses MPointCloud?
 
 If MPointCloud is useful in your application, we would like to hear about it. Use **Contact owners** on the [NuGet package page](https://www.nuget.org/packages/MPointCloud) to share your company/product name, an optional website link, and a short description of how you use the library.

@@ -24,6 +24,7 @@ Documentation:
 - [Performance](docs/performance.md)
 - [Samples](samples/README.md)
 - [Changelog](CHANGELOG.md)
+- [Support and Feedback](SUPPORT.md)
 - [Full Documentation Index](docs/README.md)
 
 **NuGet users:** the public MPointCloud repository includes runnable sample projects for PCD, streaming, XYZ, PLY, and PTS. The same samples are also included in the standalone binary release package.
@@ -336,6 +337,10 @@ MPointCloud 1.0 integrates with MEngine through the optional `Mengine.IO.MPointC
 MPointCloud remains independent of MEngine. Applications may use it alone, register the optional MEngine provider, or supply their own providers.
 
 See [MEngine Integration](docs/mengine-integration.md) for consumer examples, prerequisites, mapping limits, and what happens when the adapter is absent.
+
+## Support and Feedback
+
+Report bugs, request features, or suggest documentation corrections through [GitHub Issues](https://github.com/Zeniac/MPointCloud/issues). See [Support and Feedback](SUPPORT.md) for the information to include and the private contact route.
 
 ## Who uses MPointCloud?
 
