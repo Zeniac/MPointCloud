@@ -12,4 +12,4 @@ dotnet run --project samples/PcdQuickStart/PcdQuickStart.csproj -c Release
 
 This writes `sample-binary.pcd` and `sample-compressed.pcd` with the same three XYZ points: (1,2,3), (4,5,6), and (7,8,9). In the separately available MEngine application, register the optional provider and read either file as shown in the guide. Both imports should return three canonical positions with those coordinates.
 
-The completed initial MEngine integration used preview.2. After publication, update the adapter's MPointCloud package reference to `1.0.0` and repeat the import smoke test using the published package.
+Use the published `MPointCloud` version `1.0.0` package when building the adapter for these examples.

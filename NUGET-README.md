@@ -72,7 +72,7 @@ The standalone GitHub release ZIP also includes the same sample source configure
 
 ## MEngine integration
 
-The initial integration gate passed using the optional MEngine adapter and the published preview.2 package. MPointCloud 1.0 retains that library implementation and public API. MEngine assemblies are acquired separately.
+MPointCloud 1.0 integrates with MEngine through an optional point-cloud I/O adapter. The adapter imports PCD data into MEngine-owned types while MPointCloud remains usable independently. MEngine assemblies are acquired separately.
 
 Provider usage and mapping limits: https://github.com/Zeniac/MPointCloud/blob/master/docs/mengine-integration.md
 

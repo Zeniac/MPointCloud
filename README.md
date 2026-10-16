@@ -331,11 +331,11 @@ Applications can use MPointCloud simply as a PCD reader/writer without using any
 
 ## MEngine Integration
 
-MEngine consumes MPointCloud through the optional `Mengine.IO.MPointCloud` adapter. It reads ASCII, binary and binary_compressed directly from streams and converts results into MEngine-owned data types.
+MPointCloud 1.0 integrates with MEngine through the optional `Mengine.IO.MPointCloud` adapter. It reads ASCII, binary and binary_compressed directly from streams and converts results into MEngine-owned data types.
 
 MPointCloud remains independent of MEngine. Applications may use it alone, register the optional MEngine provider, or supply their own providers.
 
-See [MEngine Integration](docs/mengine-integration.md) for consumer examples, prerequisites, mapping limits, and what happens when the adapter is absent. The initial integration gate passed against preview.2; MEngine should smoke-test the actual 1.0 package after publication.
+See [MEngine Integration](docs/mengine-integration.md) for consumer examples, prerequisites, mapping limits, and what happens when the adapter is absent.
 
 ## Who uses MPointCloud?
 
@@ -384,11 +384,11 @@ MPointCloud is being developed around several core principles:
 
 ## Project Status
 
-MPointCloud 1.0 is the first stable release. The initial MEngine integration gate completed against preview.2; version 1.0 retains that implementation and public API.
+MPointCloud 1.0 is the first stable release, available through NuGet and standalone GitHub release archives.
 
 The current implementation includes PCD 0.7 ASCII, binary, and binary-compressed read/write; PCD encoding conversion and official PCL interoperability fixtures; XYZ/XYZI/XYZRGB/XYZRGBA; PLY 1.0 ASCII and binary little/big-endian vertex I/O; PTS XYZI and XYZI+RGB; ordered and unordered parallel text readers where supported; ordered parallel text writers; bounded chunked I/O; synchronous streaming; and async `IAsyncEnumerable` streaming where supported.
 
-The correctness hardening and initial integration gates for 1.0 are complete. Core correctness hardening, legacy-reference retirement, persisted official-PCL ASCII/binary/binary_compressed interoperability coverage, and representative Release-mode benchmark tuning are complete. Tuned defaults are 4,096 rows for text chunking and 16,384 points for binary streaming.
+PCD interoperability is covered by official-PCL ASCII, binary and binary_compressed fixtures. Benchmark-tuned defaults are 4,096 rows for text chunking and 16,384 points for binary streaming.
 
 For current format status, see [Supported Formats and Variants](docs/supported-formats.md). For installation, examples, and performance guidance, see the [Documentation Index](docs/README.md) and [Samples](samples/README.md).
 

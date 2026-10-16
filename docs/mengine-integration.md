@@ -2,7 +2,7 @@
 
 MPointCloud is a standalone library. MEngine consumes it through the optional `Mengine.IO.MPointCloud` adapter; MPointCloud does not depend on MEngine.
 
-The initial integration gate completed against the published `0.9.0-preview.2` NuGet package. Automated import/provider tests and user-confirmed small-cloud viewer behavior support the 1.0 promotion. Version 1.0 retains the same library implementation and public APIs. MEngine should consume and smoke-test the actual 1.0 package after it is published.
+This guide uses MPointCloud 1.0 for PCD import through the optional MEngine adapter. The adapter converts library results into MEngine-owned data types.
 
 ## Requirements
 
@@ -43,7 +43,6 @@ The adapter reads ASCII, binary, and binary_compressed through `PcdReader.Read(S
 - Complete normal triplets map to normals; other supported numeric fields become attributes.
 - The current adapter accepts attributes with 1-4 components and requires finite numeric channels. These are MEngine mapping limits: MPointCloud independently supports larger PCD COUNT fields and non-finite floating-point values.
 - Organized dimensions, viewpoint, comments, and schema descriptions are retained as document metadata. Viewpoint is not automatically applied as a position transform.
-- The initial viewer proof uses small mesh glyphs. It does not establish scalable point rendering or individual-point selection.
 
 ## When the adapter is absent
 
@@ -53,4 +52,4 @@ Applications can register their own providers or construct MEngine point-cloud d
 
 ## Independent library examples
 
-The eight [standalone consumer samples](../samples/README.md) exercise MPointCloud without MEngine. In particular, `PcdStreamInput` reads all three PCD encodings from in-memory ZIP entries, and `PcdQuickStart` generates small binary and compressed PCD inputs suitable for an MEngine integration smoke test.
+The eight [standalone consumer samples](../samples/README.md) exercise MPointCloud without MEngine. In particular, `PcdStreamInput` reads all three PCD encodings from in-memory ZIP entries, and `PcdQuickStart` generates small binary and compressed PCD inputs suitable for trying the provider examples above.
