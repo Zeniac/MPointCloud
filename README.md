@@ -13,7 +13,7 @@ MPointCloud is a standalone Mekneo library and the preferred point-cloud I/O pro
 Install from NuGet:
 
 ```bash
-dotnet add package MPointCloud --version 0.9.0-preview.1
+dotnet add package MPointCloud --version 0.9.0-preview.2
 ```
 
 Documentation:
@@ -33,7 +33,7 @@ Documentation:
 
 MPointCloud is designed to make common point-cloud formats easy to consume from .NET while also providing explicit high-performance read/write modes for large datasets.
 
-| Format / Variant | Sequential Read | Ordered Parallel Read | Unordered Parallel Read | Sync Stream Read | Async Stream Read | Sequential Write | Ordered Parallel Write | Sync Stream Write | Async Stream Write |
+| Format / Variant | Sequential Read | Ordered Parallel Read | Unordered Parallel Read | Sync Chunk Read | Async Chunk Read | Sequential Write | Ordered Parallel Write | Sync Chunk Write | Async Chunk Write |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | **PCD 0.7 ASCII** | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
 | **PCD 0.7 binary** | Yes | N/A | N/A | Yes | Yes | Yes | N/A | Yes | Yes |
@@ -82,6 +82,14 @@ var (header, data) = PcdAsciiReader.Read(
         ParallelMode = ParallelReadMode.PreserveOrder
     });
 ```
+
+### Complete-file PCD stream input
+
+Since `0.9.0-preview.2`, `PcdReader.Read(Stream)` detects ASCII, binary, or binary_compressed from one header parse. `PcdAsciiReader.Read(Stream)` and its read-options overload are also available.
+
+Caller streams are read from their current position and remain open on success or failure. Seekable and non-seekable inputs are supported, including ZIP-entry streams. Each input must contain one complete PCD through end of stream; these APIs materialize the complete cloud.
+
+The chunk columns above describe incremental point processing, which is separate from accepting a .NET `Stream`. See [Getting Started](docs/getting-started.md) and the [PcdStreamInput sample](samples/README.md#pcdstreaminput).
 
 ### Streaming chunk readers
 
@@ -380,7 +388,7 @@ MPointCloud is currently under active development.
 
 The current implementation includes PCD 0.7 ASCII, binary, and binary-compressed read/write; PCD encoding conversion and official PCL interoperability fixtures; XYZ/XYZI/XYZRGB/XYZRGBA; PLY 1.0 ASCII and binary little/big-endian vertex I/O; PTS XYZI and XYZI+RGB; ordered and unordered parallel text readers where supported; ordered parallel text writers; bounded chunked I/O; synchronous streaming; and async `IAsyncEnumerable` streaming where supported.
 
-Correctness hardening for the current `0.9.0-preview.1` release candidate is complete. Core correctness hardening, legacy-reference retirement, persisted official-PCL ASCII/binary/binary_compressed interoperability coverage, and representative Release-mode benchmark tuning are complete. Tuned defaults are 4,096 rows for text chunking and 16,384 points for binary streaming.
+Correctness hardening for the current `0.9.0-preview.2` release candidate is complete. Core correctness hardening, legacy-reference retirement, persisted official-PCL ASCII/binary/binary_compressed interoperability coverage, and representative Release-mode benchmark tuning are complete. Tuned defaults are 4,096 rows for text chunking and 16,384 points for binary streaming.
 
 For current format status, see [Supported Formats and Variants](docs/supported-formats.md). For installation, examples, and performance guidance, see the [Documentation Index](docs/README.md) and [Samples](samples/README.md).
 
@@ -388,3 +396,4 @@ For current format status, see [Supported Formats and Variants](docs/supported-f
 
 **MPointCloud**  
 High-performance point-cloud data I/O for .NET.
+

@@ -9,7 +9,7 @@ The first public release is intended to be available through both NuGet and a st
 For the current preview, specify the version explicitly:
 
 ```bash
-dotnet add package MPointCloud --version 0.9.0-preview.1
+dotnet add package MPointCloud --version 0.9.0-preview.2
 ```
 
 ## Samples
@@ -19,6 +19,7 @@ Runnable consumer samples are maintained in the public MPointCloud repository un
 Current sample projects cover:
 
 - PCD read/write and encoding conversion
+- complete-cloud PCD input from memory and ZIP-entry streams
 - bounded PCD streaming
 - async PCD streaming
 - arbitrary-schema PCD data
@@ -73,3 +74,4 @@ The library is free for permitted personal, academic, research, and commercial u
 The public distribution is binary-only. The proprietary development repository is not part of the public package.
 
 Public samples contain only consumer code that demonstrates the public MPointCloud API.
+

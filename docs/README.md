@@ -21,6 +21,7 @@ Runnable sample projects are maintained under the repository `samples/` director
 The public sample set covers:
 
 - PCD read/write and encoding conversion
+- complete-cloud PCD input from memory and ZIP-entry streams
 - bounded PCD streaming
 - async PCD streaming
 - XYZ-family I/O
@@ -29,3 +30,4 @@ The public sample set covers:
 - arbitrary schema inspection
 
 MEngine integration documentation will be added after the preview package is consumed through the public package boundary.
+

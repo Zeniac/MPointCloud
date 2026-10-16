@@ -53,6 +53,14 @@ PLY ASCII is sequential; it does not expose these parallel read options.
 
 PCD binary supports bounded synchronous and asynchronous chunk streaming, but it does not currently use the text-oriented ordered/unordered parallel parsing modes.
 
+### Complete-file PCD stream APIs
+
+From `0.9.0-preview.2`, `PcdAsciiReader.Read(Stream)` and `PcdAsciiReader.Read(Stream, PointCloudReadOptions)` read ASCII directly from caller-owned streams. `PcdReader.Read(Stream)` and `PcdReader.Read(Stream, PointCloudReadOptions?)` detect ASCII, binary, or binary_compressed from a single header parse.
+
+All specialized complete-file PCD readers also accept streams. They read at the current position without seeking or rewinding and leave the caller's stream open on success and failure. Seekable and non-seekable inputs are supported. Each stream must contain one complete PCD through end of stream; trailing bytes (or additional non-empty ASCII rows) are rejected. Failure may advance the stream, so its position after an exception is unspecified.
+
+ASCII stream reads honor the same parallel and organized-cloud policies as filename reads. Options passed to `PcdReader` apply to ASCII; binary complete-cloud paths do not use text parallel options. Complete-file stream APIs materialize the whole cloud and are distinct from chunk-streaming APIs, which currently accept filenames.
+
 ### Streaming chunk APIs
 
 PCD ASCII, PCD binary, and all currently supported XYZ-family variants expose synchronous chunk readers.
@@ -346,3 +354,4 @@ MPointCloud uses:
 - user-provided regression fixtures where redistribution is safe
 
 The fixtures and internal implementation-tracking documents are maintained in the private development repository and are not included in the public distribution.
+

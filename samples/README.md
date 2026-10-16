@@ -14,6 +14,14 @@ Creates a small PCD cloud, writes binary PCD, reads it back, and converts it to 
 dotnet run --project samples/PcdQuickStart/PcdQuickStart.csproj -c Release
 ```
 
+### PcdStreamInput
+
+Creates ASCII, binary, and binary_compressed PCD entries in an in-memory ZIP archive, then reads each entry directly through `PcdReader.Read(Stream)`. No temporary files are required, and caller-owned entry streams remain open.
+
+```bash
+dotnet run --project samples/PcdStreamInput/PcdStreamInput.csproj -c Release
+```
+
 ### PcdStreaming
 
 Creates a larger binary PCD and processes it through bounded binary chunks without materializing a second full-cloud copy.
@@ -77,8 +85,9 @@ The same sample projects select their dependency automatically:
 
 - Private development checkout: reference the MPointCloud project.
 - Standalone release ZIP: reference the included `lib/net10.0/MPointCloud.dll`.
-- Public repository checkout: restore `MPointCloud` version `0.9.0-preview.1` from NuGet after that version is published.
+- Public repository checkout: restore `MPointCloud` version `0.9.0-preview.2` from NuGet after that version is published.
 
 The commands above require the .NET 10 SDK. Run them from the repository or extracted release root. A public checkout cannot restore the preview before publication; the standalone ZIP can be used without waiting for NuGet publication.
 
 To test another published package version, pass `-p:MPointCloudVersion=<version>` to `dotnet run`. This override applies only when the sample selects NuGet.
+

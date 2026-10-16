@@ -41,6 +41,19 @@ MPointCloud follows semantic versioning for public releases.
 - benchmark-backed text and binary chunk defaults
 - exact binary floating-point bit preservation
 
+## [0.9.0-preview.2]
+
+### Added
+
+- Complete-file `PcdAsciiReader.Read(Stream)` and read-options overload.
+- Encoding-independent `PcdReader.Read(Stream)` and optional read-options overload for ASCII, binary, and binary_compressed PCD.
+- Current-position input, caller-owned stream lifetime, and seekable/non-seekable support without temporary files or header replay.
+- Regression coverage for short reads, nonzero starting positions, failure ownership, malformed/truncated/trailing input, ASCII parallel options, and organized-cloud policies.
+- `PcdStreamInput` sample reading all three encodings directly from in-memory ZIP entries.
+
+Existing filename APIs, format support, license, and chunk-streaming APIs remain available. This preview addresses the API gap reported during MEngine integration; final MEngine validation against preview.2 is pending.
+
 ## [0.9.0-preview.1]
 
 Initial release-engineering preview version reserved for package and standalone-distribution validation before the first public 1.0 release.
+

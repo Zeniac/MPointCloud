@@ -9,7 +9,7 @@ MPointCloud is a standalone Mekneo library and the preferred point-cloud I/O pro
 ## Install
 
 ```bash
-dotnet add package MPointCloud --version 0.9.0-preview.1
+dotnet add package MPointCloud --version 0.9.0-preview.2
 ```
 
 ## Supported formats
@@ -42,11 +42,21 @@ PcdWriter.Write(
     PcdDataEncoding.BinaryCompressed);
 ```
 
+## Read from a stream
+
+```csharp
+using var input = File.OpenRead("cloud.pcd");
+var (header, data) = PcdReader.Read(input);
+```
+
+Since preview.2, ASCII, binary, and binary_compressed PCD can be read from seekable or non-seekable .NET streams. Reads start at the current position and leave caller streams open on success and failure. These complete-cloud APIs are separate from bounded chunk streaming.
+
 ## Samples
 
 The public MPointCloud repository includes runnable sample projects covering:
 
 - PCD read/write and encoding conversion
+- complete-cloud PCD input from memory and ZIP-entry streams
 - bounded PCD streaming
 - async PCD streaming
 - XYZ-family I/O
@@ -86,3 +96,4 @@ MPointCloud is proprietary closed-source software distributed under the MPointCl
 Permitted personal, academic, research, and commercial use is available subject to the license and attribution requirements.
 
 Copyright © 2026 Mekneo.
+
