@@ -27,7 +27,7 @@ Current sample projects cover:
 - PLY read/write
 - PTS read/write
 
-Once the selected preview version is available on NuGet, users can clone the public repository and run the samples; the projects restore the pinned preview version from NuGet when the standalone DLL is absent. The standalone binary release also includes the same sample source, configured to reference the packaged `MPointCloud.dll`.
+Users can clone the public repository and run the samples; the projects restore the pinned preview version from NuGet when the standalone DLL is absent. The standalone binary release also includes the same sample source, configured to reference the packaged `MPointCloud.dll`.
 
 See [Samples](../samples/README.md) for the current list and commands.
 

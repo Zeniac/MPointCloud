@@ -396,7 +396,7 @@ MPointCloud is currently under active development.
 
 The current implementation includes PCD 0.7 ASCII, binary, and binary-compressed read/write; PCD encoding conversion and official PCL interoperability fixtures; XYZ/XYZI/XYZRGB/XYZRGBA; PLY 1.0 ASCII and binary little/big-endian vertex I/O; PTS XYZI and XYZI+RGB; ordered and unordered parallel text readers where supported; ordered parallel text writers; bounded chunked I/O; synchronous streaming; and async `IAsyncEnumerable` streaming where supported.
 
-Correctness hardening for the current `0.9.0-preview.2` release candidate is complete. Core correctness hardening, legacy-reference retirement, persisted official-PCL ASCII/binary/binary_compressed interoperability coverage, and representative Release-mode benchmark tuning are complete. Tuned defaults are 4,096 rows for text chunking and 16,384 points for binary streaming.
+Correctness hardening for `0.9.0-preview.2` is complete. Core correctness hardening, legacy-reference retirement, persisted official-PCL ASCII/binary/binary_compressed interoperability coverage, and representative Release-mode benchmark tuning are complete. Tuned defaults are 4,096 rows for text chunking and 16,384 points for binary streaming.
 
 For current format status, see [Supported Formats and Variants](docs/supported-formats.md). For installation, examples, and performance guidance, see the [Documentation Index](docs/README.md) and [Samples](samples/README.md).
 

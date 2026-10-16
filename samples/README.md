@@ -85,9 +85,9 @@ The same sample projects select their dependency automatically:
 
 - Private development checkout: reference the MPointCloud project.
 - Standalone release ZIP: reference the included `lib/net10.0/MPointCloud.dll`.
-- Public repository checkout: restore `MPointCloud` version `0.9.0-preview.2` from NuGet after that version is published.
+- Public repository checkout: restore the published `MPointCloud` version `0.9.0-preview.2` from NuGet.
 
-The commands above require the .NET 10 SDK. Run them from the repository or extracted release root. A public checkout cannot restore the preview before publication; the standalone ZIP can be used without waiting for NuGet publication.
+The commands above require the .NET 10 SDK. Run them from the repository or extracted release root. Public checkout samples restore preview.2 from NuGet; standalone ZIP samples use the included DLL.
 
 To test another published package version, pass `-p:MPointCloudVersion=<version>` to `dotnet run`. This override applies only when the sample selects NuGet.
 
