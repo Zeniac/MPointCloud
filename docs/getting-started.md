@@ -7,7 +7,7 @@ It can be used independently or as the preferred point-cloud data provider for M
 ## Install
 
 ```bash
-dotnet add package MPointCloud --version 1.0.0
+dotnet add package MPointCloud --version 1.0.1
 ```
 
 Then import the format namespace you need.

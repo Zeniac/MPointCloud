@@ -12,6 +12,6 @@ dotnet run --project samples/PcdQuickStart/PcdQuickStart.csproj -c Release
 
 This writes `sample-binary.pcd` and `sample-compressed.pcd` with the same three XYZ points: (1,2,3), (4,5,6), and (7,8,9). In the separately available Mektral application, register the optional provider and read either file as shown in the guide. Both imports should return three canonical positions with those coordinates.
 
-Use the published `MPointCloud` version `1.0.0` package when building the adapter for these examples.
+Use the published `MPointCloud` version `1.0.1` package when building the adapter for these examples.
 
 The guide explains the existing adapter/namespace identifiers used during the Mektral product rename.

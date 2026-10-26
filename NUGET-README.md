@@ -9,7 +9,7 @@ MPointCloud is a standalone Mekneo library and the preferred point-cloud I/O pro
 ## Install
 
 ```bash
-dotnet add package MPointCloud --version 1.0.0
+dotnet add package MPointCloud --version 1.0.1
 ```
 
 ## Supported formats

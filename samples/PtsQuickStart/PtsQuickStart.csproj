@@ -5,7 +5,7 @@
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <MPointCloudVersion Condition="'$(MPointCloudVersion)' == ''">1.0.0</MPointCloudVersion>
+    <MPointCloudVersion Condition="'$(MPointCloudVersion)' == ''">1.0.1</MPointCloudVersion>
   </PropertyGroup>
 
   <ItemGroup Condition="Exists('..\..\src\MPointCloud\MPointCloud.csproj')">

@@ -9,7 +9,7 @@ MPointCloud 1.0 is distributed through NuGet and standalone GitHub release archi
 Install the stable 1.0 package:
 
 ```bash
-dotnet add package MPointCloud --version 1.0.0
+dotnet add package MPointCloud --version 1.0.1
 ```
 
 ## Samples
@@ -27,7 +27,7 @@ Current sample projects cover:
 - PLY read/write
 - PTS read/write
 
-Users can clone the public repository and run the samples; the projects restore version 1.0.0 from NuGet when the standalone DLL is absent. The standalone binary release also includes the same sample source, configured to reference the packaged `MPointCloud.dll`.
+Users can clone the public repository and run the samples; the projects restore version 1.0.1 from NuGet when the standalone DLL is absent. The standalone binary release also includes the same sample source, configured to reference the packaged `MPointCloud.dll`.
 
 See [Samples](../samples/README.md) for the current list and commands.
 

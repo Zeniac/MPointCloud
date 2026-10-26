@@ -19,7 +19,7 @@ Subject to compliance with this License, the copyright holder grants you a non-e
 - distribute the compiled Software as a dependency or component of an application that you develop or distribute;
 - obtain and consume MPointCloud through authorized package managers and dependency-management systems;
 - include MPointCloud as a direct or transitive dependency of another software package;
-- use the Software together with MEngine or independently of MEngine;
+- use the Software together with Mektral or independently of Mektral;
 - create software that consumes the public APIs exposed by MPointCloud.
 
 No source-code rights are granted unless separately authorized in writing by the copyright holder.
@@ -178,7 +178,7 @@ This sample-code permission exists so developers can use the examples as practic
 
 When sample code is substantially copied into your own application, you may place the resulting application code under your own project license and are not required to preserve the MPointCloud sample file header inside adapted snippets.
 
-If an Mekneo sample is redistributed substantially unchanged as a standalone example or tutorial, its existing Mekneo attribution and this sample-code permission should be preserved.
+If a Mekneo sample is redistributed substantially unchanged as a standalone example or tutorial, its existing Mekneo attribution and this sample-code permission should be preserved.
 
 This permission applies only to source files clearly distributed as public samples. It does not apply to:
 
@@ -226,7 +226,7 @@ However, this License does not permit copying, reproducing, adapting, translatin
 
 ## 12. Trademarks and Project Name
 
-The names "MPointCloud", "MEngine", and "Mekneo", together with associated logos, package identifiers, or project identifiers, may not be used in a manner that implies ownership, endorsement, sponsorship, or official affiliation without permission.
+The names "MPointCloud", "Mektral", and "Mekneo", together with associated logos, package identifiers, or project identifiers, may not be used in a manner that implies ownership, endorsement, sponsorship, or official affiliation without permission.
 
 You may truthfully state that your product:
 

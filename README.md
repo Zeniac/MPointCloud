@@ -13,7 +13,7 @@ MPointCloud is a standalone Mekneo library and the preferred point-cloud I/O pro
 Install from NuGet:
 
 ```bash
-dotnet add package MPointCloud --version 1.0.0
+dotnet add package MPointCloud --version 1.0.1
 ```
 
 Documentation:
@@ -389,7 +389,7 @@ MPointCloud is being developed around several core principles:
 
 ## Project Status
 
-MPointCloud 1.0 is the first stable release, available through NuGet and standalone GitHub release archives.
+MPointCloud 1.0.1 is a stable documentation and distribution update, available through NuGet and standalone GitHub release archives. Parser/writer behavior and the public API are unchanged from 1.0.0.
 
 The current implementation includes PCD 0.7 ASCII, binary, and binary-compressed read/write; PCD encoding conversion and official PCL interoperability fixtures; XYZ/XYZI/XYZRGB/XYZRGBA; PLY 1.0 ASCII and binary little/big-endian vertex I/O; PTS XYZI and XYZI+RGB; ordered and unordered parallel text readers where supported; ordered parallel text writers; bounded chunked I/O; synchronous streaming; and async `IAsyncEnumerable` streaming where supported.
 

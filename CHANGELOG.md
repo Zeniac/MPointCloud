@@ -6,14 +6,20 @@ MPointCloud follows semantic versioning for public releases.
 
 ## [Unreleased]
 
+No unreleased changes are recorded.
+
+## [1.0.1]
+
 ### Documentation and distribution
 
-- Adopt Mektral as the engineering SDK product name in current documentation; retain working legacy technical identifiers until the SDK migration completes.
-- Add the canonical Mektral integration guide and recipe, with compatibility pages for previous links.
-- Include the reserved consumer-facing integration wording cleanup and support/reporting guidance in the next distribution.
-- Retain the existing implementation, public MPointCloud API, supported formats and package ID.
+- Adopt Mektral as the engineering SDK product name. Integration examples retain the current SDK's working technical identifiers during its rename.
+- Add the canonical Mektral integration guide and recipe, preserving compatibility pages for previous links.
+- Refresh the embedded NuGet README and package release notes with consumer-facing integration wording, without internal validation or temporary viewer details.
+- Include support/reporting guidance and the optional, permission-based product adoption invitation in the standalone distribution and public documentation.
+- Update sample package defaults and installation instructions to 1.0.1.
+- Update the SDK name in the license and correct a sample-permission grammar error; license permissions, restrictions and attribution requirements are unchanged.
 
-These changes are planned for the next patch, proposed as 1.0.1; that version is not yet published. Published 1.0.0 artifacts remain unchanged.
+Parser/writer behavior, public MPointCloud APIs, supported formats, package ID and .NET 10 target are unchanged from 1.0.0.
 
 ## [1.0.0]
 
