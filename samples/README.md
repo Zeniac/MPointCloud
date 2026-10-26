@@ -72,7 +72,7 @@ dotnet run --project samples/PtsQuickStart/PtsQuickStart.csproj -c Release
 
 ## Release sample set
 
-The release includes eight standalone sample projects plus an [MEngine integration recipe](MEngineIntegration/README.md). The recipe requires separately available MEngine assemblies; the eight runnable library projects do not.
+The release includes eight standalone sample projects plus an [Mektral integration recipe](MektralIntegration/README.md). The recipe requires separately available Mektral assemblies; the eight runnable library projects do not.
 
 Public release samples should consume the NuGet/binary distribution rather than depend on proprietary implementation source.
 

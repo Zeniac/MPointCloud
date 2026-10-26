@@ -6,7 +6,14 @@ MPointCloud follows semantic versioning for public releases.
 
 ## [Unreleased]
 
-No unreleased changes are recorded.
+### Documentation and distribution
+
+- Adopt Mektral as the engineering SDK product name in current documentation; retain working legacy technical identifiers until the SDK migration completes.
+- Add the canonical Mektral integration guide and recipe, with compatibility pages for previous links.
+- Include the reserved consumer-facing integration wording cleanup and support/reporting guidance in the next distribution.
+- Retain the existing implementation, public MPointCloud API, supported formats and package ID.
+
+These changes are planned for the next patch, proposed as 1.0.1; that version is not yet published. Published 1.0.0 artifacts remain unchanged.
 
 ## [1.0.0]
 

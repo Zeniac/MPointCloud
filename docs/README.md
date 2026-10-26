@@ -30,7 +30,7 @@ The public sample set covers:
 - PTS
 - arbitrary schema inspection
 
-## MEngine integration
+## Mektral integration
 
-See [MEngine Integration](mengine-integration.md) and the [consumer recipe](../samples/MEngineIntegration/README.md) for registration, direct-reader usage, mapping limits, and optional-provider behavior. The eight standalone sample projects do not require MEngine.
+See [Mektral Integration](mektral-integration.md) and the [consumer recipe](../samples/MektralIntegration/README.md) for registration, direct-reader usage, mapping limits, and optional-provider behavior. The eight standalone sample projects do not require Mektral.
 

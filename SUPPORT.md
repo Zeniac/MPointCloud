@@ -17,7 +17,7 @@ For a bug report, include:
 
 Keep client-owned, confidential and personal data out of public issues. Reduce a failing file to a small synthetic example when possible.
 
-When reporting an MEngine integration problem, identify whether it occurs when calling MPointCloud directly or only through the MEngine adapter. Include both product versions.
+When reporting a Mektral integration problem, identify whether it occurs when calling MPointCloud directly or only through the Mektral adapter. Include both product versions.
 
 ## Private inquiries
 

@@ -2,7 +2,7 @@
 
 MPointCloud is a standalone .NET point-cloud I/O library.
 
-It can be used independently or as the preferred point-cloud data provider for MEngine.
+It can be used independently or as the preferred point-cloud data provider for Mektral.
 
 ## Install
 
@@ -121,7 +121,7 @@ This avoids materializing the full point cloud as one in-memory object.
 
 ## Where to go next
 
-- [MEngine Integration](mengine-integration.md)
+- [Mektral Integration](mektral-integration.md)
 - [Supported Formats](supported-formats.md)
 - [Performance](performance.md)
 - [PLY Support](ply.md)

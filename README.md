@@ -6,7 +6,7 @@
 
 It is designed to provide a lightweight, fast, and easy-to-integrate PCD implementation for .NET applications while remaining independent of any rendering engine or application framework.
 
-MPointCloud is a standalone Mekneo library and the preferred point-cloud I/O provider for MEngine.
+MPointCloud is a standalone Mekneo library and the preferred point-cloud I/O provider for Mektral.
 
 ## Quick Start
 
@@ -314,7 +314,7 @@ See [Supported Formats and Variants](docs/supported-formats.md) for the detailed
 
 ## Standalone Library
 
-MPointCloud has no dependency on MEngine.
+MPointCloud has no dependency on Mektral.
 
 It can therefore be used independently in applications such as:
 
@@ -328,15 +328,15 @@ It can therefore be used independently in applications such as:
 - Academic applications
 - Server-side processing systems
 
-Applications can use MPointCloud simply as a PCD reader/writer without using any MEngine functionality.
+Applications can use MPointCloud simply as a PCD reader/writer without using any Mektral functionality.
 
-## MEngine Integration
+## Mektral Integration
 
-MPointCloud 1.0 integrates with MEngine through the optional `Mengine.IO.MPointCloud` adapter. It reads ASCII, binary and binary_compressed directly from streams and converts results into MEngine-owned data types.
+MPointCloud 1.0 integrates with Mektral through an optional point-cloud I/O adapter. It reads ASCII, binary and binary_compressed directly from streams and converts results into Mektral-owned data types.
 
-MPointCloud remains independent of MEngine. Applications may use it alone, register the optional MEngine provider, or supply their own providers.
+MPointCloud remains independent of Mektral. Applications may use it alone, register the optional Mektral provider, or supply their own providers.
 
-See [MEngine Integration](docs/mengine-integration.md) for consumer examples, prerequisites, mapping limits, and what happens when the adapter is absent.
+See [Mektral Integration](docs/mektral-integration.md) for consumer examples, prerequisites, mapping limits, and what happens when the adapter is absent.
 
 ## Support and Feedback
 
@@ -380,12 +380,12 @@ MPointCloud is not an official component of, and is not affiliated with or endor
 MPointCloud is being developed around several core principles:
 
 - **Fast** — suitable for large point-cloud datasets
-- **Standalone** — no dependency on MEngine or another graphics framework
+- **Standalone** — no dependency on Mektral or another graphics framework
 - **Interoperable** — compatible with established PCD data
 - **Simple** — straightforward .NET API for reading and writing point clouds
 - **Efficient** — designed to reduce unnecessary allocations and copies
 - **Extensible** — able to evolve toward additional point-cloud formats
-- **Engine-ready** — optimized for use with MEngine without being coupled to it
+- **Engine-ready** — optimized for use with Mektral without being coupled to it
 
 ## Project Status
 

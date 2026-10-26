@@ -4,7 +4,7 @@
 
 **MPointCloud** is a high-performance .NET point-cloud data I/O library with support for PCD, XYZ-family text, PLY, and PTS.
 
-MPointCloud is a standalone Mekneo library and the preferred point-cloud I/O provider for MEngine.
+MPointCloud is a standalone Mekneo library and the preferred point-cloud I/O provider for Mektral.
 
 ## Install
 
@@ -70,11 +70,11 @@ https://github.com/Zeniac/MPointCloud/tree/master/samples
 
 The standalone GitHub release ZIP also includes the same sample source configured to reference the packaged MPointCloud DLL.
 
-## MEngine integration
+## Mektral integration
 
-MPointCloud 1.0 integrates with MEngine through an optional point-cloud I/O adapter. The adapter imports PCD data into MEngine-owned types while MPointCloud remains usable independently. MEngine assemblies are acquired separately.
+MPointCloud 1.0 integrates with Mektral through an optional point-cloud I/O adapter. The adapter imports PCD data into Mektral-owned types while MPointCloud remains usable independently. Mektral assemblies are acquired separately.
 
-Provider usage and mapping limits: https://github.com/Zeniac/MPointCloud/blob/master/docs/mengine-integration.md
+Provider usage and mapping limits: https://github.com/Zeniac/MPointCloud/blob/master/docs/mektral-integration.md
 
 ## Documentation
 
